@@ -27,6 +27,32 @@
 /chdk-trunk/bin/
 /chdk-trunk/main.bin*
 /soup-engine/src/filmdev
+/chdk-trunk/CHDK/DATA/logo.dat
+/chdk-trunk/CHDK/MODULES/
+/chdk-trunk/lib/font/font_8x16_uni_packed.h
+/chdk-trunk/lib/lang/lang_str.h
+/chdk-trunk/loader/**/main.bin*
+/chdk-trunk/platform/**/main.bin*
+/chdk-trunk/**/*.elf.syms
+/chdk-trunk/modules/exportlist.inc
+/chdk-trunk/modules/module_exportlist.h
+/chdk-trunk/modules/module_hashlist.c
+/chdk-trunk/platform/**/bin_compat.h
+/chdk-trunk/tools/code_gen
+/chdk-trunk/tools/dancingbits
+/chdk-trunk/tools/elf2flt/elf2flt
+/chdk-trunk/tools/elf2flt/fltdump
+/chdk-trunk/tools/finsig_dryos
+/chdk-trunk/tools/finsig_vxworks
+/chdk-trunk/tools/font_8x16_pack
+/chdk-trunk/tools/gen_conf_lua
+/chdk-trunk/tools/gensig_dryos
+/chdk-trunk/tools/gensig_vxworks
+/chdk-trunk/tools/makeexport
+/chdk-trunk/tools/makelang
+/chdk-trunk/tools/packfi2/fi2enc
+/chdk-trunk/tools/pakwif
+/chdk-trunk/tools/sig_ref_*.bin
 
 # Generated CHDK files and private firmware dumps
 /chdk-trunk/CHDK/LUALIB/GEN/
