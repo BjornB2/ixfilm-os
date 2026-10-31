@@ -127,7 +127,7 @@ The [sample-photo folder](docs/sample-photos) also contains the full 4000 x 3000
 
 ## Current status
 
-This repository is being prepared for its first public release. Compact conversion is tested in normal use. Full fast and Full quality have both completed successfully at 4000 x 3000, but remain less thoroughly tested and dramatically less hurried.
+Version 0.1.0 is the first public release. Compact conversion is tested in normal use. Full fast and Full quality have both completed successfully at 4000 x 3000, but remain experimental, less thoroughly tested and dramatically less hurried.
 
 ## Credits and licence
 
