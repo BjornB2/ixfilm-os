@@ -125,10 +125,6 @@ These are converted by IXFilm inside the camera. The linked files are the comple
 
 The [sample-photo folder](docs/sample-photos) also contains the full 4000 x 3000 output from Full fast and Full quality.
 
-## Current status
-
-Version 0.1.0 is the first public release. Compact conversion is tested in normal use. Full fast and Full quality have both completed successfully at 4000 x 3000, but remain experimental, less thoroughly tested and dramatically less hurried.
-
 ## Credits and licence
 
 IXFilm OS is built on [CHDK](https://github.com/CHDK/chdk) and uses the GPL-licensed [Soup Engine](https://github.com/jiijii0/soup-engine) image-processing code. The film recipes are original approximations, not measured reproductions of commercial film stocks. Product names and trademarks belong to their owners.

@@ -10,7 +10,7 @@ The interface photographs are reduced to 1600 x 1200 for the repository. The ori
 - `ixfilm-conversion-progress.jpg`: a conversion with the lens-retraction hint;
 - `ixfilm-conversion-queue.jpg`: progress on frame three of a three-frame queue.
 
-Still to add before the first public release:
+Useful additions for a future documentation update:
 
 - `original-example.jpg`: a frame taken with film simulation disabled;
 - `converted-example.jpg`: a closely matched frame made with IXFilm enabled.
