@@ -103,13 +103,13 @@ These are practical measurements from a small set of photographs, not laboratory
 
 ### Status and queue
 
-The selected simulation remains visible in the shooting display. During conversion, the same area shows progress and the current position in the queue.
+The selected simulation remains visible in the shooting display. During conversion, the same area shows progress and the current position in the queue. The queue total is a snapshot taken when the current conversion starts. Photographs added while it is working are still queued, but the displayed total is updated only when IXFilm starts the next photograph.
 
 | Ready to shoot | Working through a queue |
 |---|---|
 | ![Nostalgic Neg selected permanently at the bottom of the shooting display](docs/images/ixfilm-selected-simulation.jpg) | ![Tri-X 400 conversion at fifty percent with frame three of three](docs/images/ixfilm-conversion-queue.jpg) |
 
-While a conversion is active, IXFilm also explains how to retract the lens without stopping the work:
+Before a conversion starts, IXFilm briefly shows how to retract the lens without stopping the work:
 
 ![IXFilm conversion in progress with the PLAY lens-retraction instruction](docs/images/ixfilm-conversion-progress.jpg)
 
@@ -117,7 +117,9 @@ While a conversion is active, IXFilm also explains how to retract the lens witho
 
 In the Canon menu, set **Lens retract** to **0 sec.** This is a manual, one-time setting and IXFilm deliberately does not change it.
 
-While a conversion is running, press `PLAY`. The camera enters its native playback mode and retracts the lens. The conversion can continue with the lens safely inside the body. You can then put the camera in a pocket without using the lens as an accidental coat hook.
+After taking a photograph, press `PLAY` while the temporary two-line PLAY instruction is visible. The camera enters its native playback mode and retracts the lens before IXFilm allocates its conversion memory. Conversion then continues with the lens safely inside the body, so the camera can go into a pocket without using the lens as an accidental coat hook.
+
+Do not switch between shooting and playback after percentage progress has begun. On this old camera, that mode change can rebuild memory which the active conversion is using. If you miss the temporary instruction, leave the camera in its current mode until that photograph has finished.
 
 ## Photographs
 

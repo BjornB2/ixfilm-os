@@ -172,28 +172,8 @@ static void watcher_task(void)
     char p[96],latest[96];
     struct stat a,b;
     int pending,done;
-    int was_record_mode = camera_info.state.mode_rec;
-    int initial_status_pending = 1;
-    unsigned int initial_status_at = get_tick_count() + 2000;
     load_config();
     while(running){
-        /* The boot instruction is owned by the core and temporarily hides
-         * the label supplied during autorun. Publish the saved selection once
-         * more after that instruction expires, without waiting for a photo. */
-        if (initial_status_pending &&
-            (int)(get_tick_count() - initial_status_at) >= 0 &&
-            !conversion_active && !menu_busy) {
-            show_selected_status();
-            initial_status_pending = 0;
-        }
-        /* Canon does not always request a CHDK redraw when it returns from
-         * playback to recording. Poll the native mode here as well so the
-         * persistent selected-film label does not have to wait for the next
-         * shutter event to reappear. */
-        if (camera_info.state.mode_rec && !was_record_mode &&
-            !conversion_active && !menu_busy)
-            show_selected_status();
-        was_record_mode = camera_info.state.mode_rec;
         pending=scan_pending(cfg.last_path,p,latest);
         if(cfg.selected==0){
             if(latest[0]&&strcmp(latest,cfg.last_path)){
@@ -208,10 +188,23 @@ static void watcher_task(void)
                  * size check below is still needed to avoid reading Canon's
                  * JPEG while it is being written, but should not look like an
                  * unexplained pause to the user. */
-                status_last_pct=-1;status_line(1,0);
+                status_last_pct=-1;status_line(9,0);
                 if(!stat(p,&a)){
                     msleep(2000);
                     if(!stat(p,&b)&&a.st_size==b.st_size){
+                        int wait_play;
+                        /* REC->PLAY can make Canon rebuild the shooting heap.
+                         * Give the user one explicit, safe window before the
+                         * decoder arena is allocated. Once progress starts,
+                         * the PLAY hint disappears and the mode stays put. */
+                        if (!camera_info.state.mode_play) {
+                            for (wait_play=0; wait_play<60; wait_play++) {
+                                if (camera_info.state.mode_play) break;
+                                msleep(100);
+                            }
+                        }
+                        status_line(1,0);
+                        msleep(300);
                         se_err rc=develop(p,cfg.selected);
                         if(rc==SE_OK){
                             strcpy(cfg.last_path,p);save_config();done++;

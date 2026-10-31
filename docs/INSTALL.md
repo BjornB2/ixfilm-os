@@ -230,7 +230,9 @@ If the camera starts normally without the IXFilm message, switch it off and chec
 
 Set **Lens retract** to **0 sec.** in the normal Canon menu. IXFilm leaves this setting alone.
 
-During conversion, press `PLAY`. Native playback mode turns the display to playback and retracts the lens immediately. Conversion continues in the background, so the camera can go into a pocket with the lens safely retracted.
+After taking a photograph, press `PLAY` while IXFilm's temporary two-line PLAY instruction is visible. Native playback mode retracts the lens before conversion memory is allocated. Conversion then continues in the background, so the camera can go into a pocket with the lens safely retracted.
+
+Do not switch between shooting and playback after percentage progress has begun. If you miss the temporary instruction, leave the camera in its current mode until that photograph has finished.
 
 ## Removing IXFilm
 

@@ -78,19 +78,14 @@ void ixfilm_status_update(const char *stock, int percent,
     ixfilm_stock[sizeof(ixfilm_stock)-1] = 0;
     /* Autorun reports the saved film while the boot hint is visible. Keep
      * the name, but do not replace the instruction before its timeout. */
-    if (state == 5 && ixfilm_state == 4 && ixfilm_until &&
-        (int)(get_tick_count() - ixfilm_until) < 0) return;
+    if (state == 5 && ixfilm_state == 4) return;
     ixfilm_percent = percent;
     ixfilm_current = current;
     ixfilm_total = total;
     ixfilm_state = state;
     ixfilm_draw_after = get_tick_count() + ((state == 5) ? 800 : 0);
-    ixfilm_until = (state == 1 || state == 5) ? 0 : get_tick_count() + ((state == 3) ? 8000 : 4000);
+    ixfilm_until = (state == 1 || state == 5 || state == 9) ? 0 : get_tick_count() + ((state == 3) ? 8000 : 4000);
     ixfilm_dirty = 1;
-    /* Selected-film updates are infrequent and must survive Canon bitmap
-     * rebuilds after startup and PLAY/REC transitions. Request one normal
-     * GUI restore so drawing does not depend on the next shutter event. */
-    if (state == 5) gui_set_need_restore();
 }
 
 int ixfilm_conversion_is_active(void)
@@ -106,14 +101,14 @@ void ixfilm_boot_hint(void)
      * our first paint until that has settled, as happens naturally for the
      * conversion status which is created later in the capture sequence. */
     ixfilm_draw_after = now + 2500;
-    ixfilm_until = now + 6500;
+    ixfilm_until = now + 8000;
     ixfilm_dirty = 1;
 }
 
 void ixfilm_screen_activity(void)
 {
     unsigned int now;
-    if ((ixfilm_state != 1 && ixfilm_state != 5) ||
+    if ((ixfilm_state != 1 && ixfilm_state != 5 && ixfilm_state != 9) ||
         !camera_info.state.gui_mode_none) return;
     now = get_tick_count();
     /* A Canon display sleep does not generate a CHDK GUI restore. The key
@@ -176,7 +171,7 @@ static void ixfilm_status_draw(int force_redraw)
         ixfilm_dirty = 1;
     }
     if (!ixfilm_dirty && ixfilm_region_hash_valid &&
-        ixfilm_bottom_hash(ixfilm_state == 1 && camera_info.state.mode_rec) != ixfilm_region_hash)
+        ixfilm_bottom_hash(ixfilm_state == 9 && camera_info.state.mode_rec) != ixfilm_region_hash)
         ixfilm_dirty = 1;
     if (force_redraw) ixfilm_dirty = 1;
     if (!ixfilm_dirty) return;
@@ -187,7 +182,7 @@ static void ixfilm_status_draw(int force_redraw)
     }
     else if (ixfilm_state == 5)
         sprintf(b, "%s: %s", text->film_sim, ixfilm_stock);
-    else if (ixfilm_state == 1)
+    else if (ixfilm_state == 1 || ixfilm_state == 9)
         sprintf(b, "IXFilm %s %d%%  %d/%d", ixfilm_stock, ixfilm_percent,
                 ixfilm_current, ixfilm_total);
     else if (ixfilm_state == 2)
@@ -197,14 +192,14 @@ static void ixfilm_status_draw(int force_redraw)
     else
         sprintf(b, "IXFilm %s: %s", ixfilm_stock,
                 text->error);
-    if ((ixfilm_state != 1 || !camera_info.state.mode_rec) && ixfilm_two_line_drawn) {
+    if ((ixfilm_state != 9 || !camera_info.state.mode_rec) && ixfilm_two_line_drawn) {
         gui_set_need_restore();
         ixfilm_two_line_drawn = 0;
         ixfilm_region_hash_valid = 0;
         ixfilm_dirty = 1;
         return;
     }
-    if (ixfilm_state == 1 && camera_info.state.mode_rec) {
+    if (ixfilm_state == 9 && camera_info.state.mode_rec) {
         char hint[64];
         int hy = y - FONT_HEIGHT;
         strcpy(hint,text->play_hint);
@@ -225,7 +220,7 @@ static void ixfilm_status_draw(int force_redraw)
                           0, camera_screen.width - 4, TEXT_LEFT|TEXT_FILL);
     ixfilm_drawn = 1;
     ixfilm_dirty = 0;
-    ixfilm_region_hash = ixfilm_bottom_hash(ixfilm_state == 1 && camera_info.state.mode_rec);
+    ixfilm_region_hash = ixfilm_bottom_hash(ixfilm_state == 9 && camera_info.state.mode_rec);
     ixfilm_region_hash_valid = 1;
 }
 
