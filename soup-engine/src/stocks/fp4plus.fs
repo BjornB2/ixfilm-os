@@ -1,0 +1,15 @@
+# ILFORD FP4 Plus inspired: fine grain, medium contrast and crisp detail.
+# This is an artistic approximation, not a measured profile.
+VERSION   3
+NAME      FP4 PLUS
+DESC      FINE GRAIN, MEDIUM CONTRAST, HIGH SHARPNESS
+WB        DAYLIGHT
+CURVE     0,2 32,18 72,57 128,132 192,213 232,247 255,255
+CURVE_R   0,0 64,72 128,143 192,209 255,255
+CURVE_G   0,0 64,66 128,132 192,202 255,252
+CURVE_B   0,0 64,54 128,112 192,181 255,240
+SAT       0
+HALATION  12 244 6
+HAL_TINT  255,255,255
+GRAIN     16
+GRAIN_SIZE 18

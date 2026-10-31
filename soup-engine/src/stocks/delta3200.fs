@@ -1,0 +1,15 @@
+# ILFORD Delta 3200 inspired: wide low-light tonality and pronounced grain.
+# This is an artistic approximation, not a measured profile.
+VERSION   3
+NAME      DELTA 3200
+DESC      LOW LIGHT, WIDE TONALITY, PRONOUNCED GRAIN
+WB        AS_SHOT
+CURVE     0,8 24,18 64,49 128,126 192,210 232,247 255,255
+CURVE_R   0,0 64,69 128,139 192,207 255,255
+CURVE_G   0,0 64,66 128,132 192,202 255,252
+CURVE_B   0,0 64,54 128,111 192,179 255,239
+SAT       0
+HALATION  32 232 12
+HAL_TINT  255,255,255
+GRAIN     48
+GRAIN_SIZE 48

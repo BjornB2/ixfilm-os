@@ -1,0 +1,47 @@
+# Local toolchains and downloaded archives
+/toolchain/
+/toolchain-gcc11/
+/*.tar.gz
+/*.tar.gz.sha
+/IXFILM.AUTO
+/trix400.fs
+
+# Camera cards, logs, generated configuration and test photographs
+/card-backups/
+/chdk-trunk/card-backups/
+**/CHDK/LOGS/
+**/CHDK/DATA/IXFILM.CFG
+**/CHDK/DATA/IXFTEMP.JPG
+*.JPG
+*.JPEG
+*.CRW
+*.DNG
+
+# Generated build files
+**/*.o
+**/*.d
+**/*.elf
+**/*.map
+**/*.a
+**/.o/
+/chdk-trunk/bin/
+/chdk-trunk/main.bin*
+/soup-engine/src/filmdev
+
+# Generated CHDK files and private firmware dumps
+/chdk-trunk/CHDK/LUALIB/GEN/
+/chdk-trunk/platform/**/PRIMARY.BIN
+/chdk-trunk/revision.inc
+* 2.o
+* 2.a
+* 2.bin
+* 2.dump
+* 2.syms
+
+# Release archives are generated locally or by GitHub Actions
+/dist/
+*.zip
+
+# macOS
+.DS_Store
+
