@@ -121,9 +121,9 @@ These are converted by IXFilm inside the camera. The linked files are the comple
 
 | Nostalgic Neg, Compact | Gold, Compact | Tri-X 400, Compact |
 |---|---|---|
-| [![Garden converted with Nostalgic Neg in Compact mode](docs/sample-photos/nostalgic-neg-compact-garden-1600x1200.jpg)](docs/sample-photos/nostalgic-neg-compact-garden-1600x1200.jpg) | [![Indoor plants converted with Gold in Compact mode](docs/sample-photos/gold-compact-indoor-plants-1600x1200.jpg)](docs/sample-photos/gold-compact-indoor-plants-1600x1200.jpg) | [![Indoor plants converted with Tri-X 400 in Compact mode](docs/sample-photos/tri-x-400-compact-indoor-plants-1600x1200.jpg)](docs/sample-photos/tri-x-400-compact-indoor-plants-1600x1200.jpg) |
+| [![Indoor plants converted with Nostalgic Neg in Compact mode](docs/sample-photos/nostalgic-neg-compact-indoor-plants-1600x1200.jpg)](docs/sample-photos/nostalgic-neg-compact-indoor-plants-1600x1200.jpg) | [![Indoor plants converted with Gold in Compact mode](docs/sample-photos/gold-compact-indoor-plants-1600x1200.jpg)](docs/sample-photos/gold-compact-indoor-plants-1600x1200.jpg) | [![Indoor plants converted with Tri-X 400 in Compact mode](docs/sample-photos/tri-x-400-compact-indoor-plants-1600x1200.jpg)](docs/sample-photos/tri-x-400-compact-indoor-plants-1600x1200.jpg) |
 
-The [sample-photo folder](docs/sample-photos) also contains the full 4000 x 3000 output from Full fast and Full quality, plus another Nostalgic Neg example.
+The [sample-photo folder](docs/sample-photos) also contains the full 4000 x 3000 output from Full fast and Full quality.
 
 ## Current status
 

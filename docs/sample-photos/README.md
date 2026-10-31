@@ -4,7 +4,6 @@ These JPEGs were converted by IXFilm on a Canon IXUS 120 IS. They are the comple
 
 | File | Simulation | Mode | Resolution | Observed conversion time |
 |---|---|---|---:|---:|
-| [Garden](nostalgic-neg-compact-garden-1600x1200.jpg) | Nostalgic Neg | Compact | 1600 x 1200 | 1 min 36 sec |
 | [Indoor plants](nostalgic-neg-compact-indoor-plants-1600x1200.jpg) | Nostalgic Neg | Compact | 1600 x 1200 | 1 min 34 sec |
 | [Indoor plants](gold-compact-indoor-plants-1600x1200.jpg) | Gold | Compact | 1600 x 1200 | 1 min 34 sec |
 | [Indoor plants](tri-x-400-compact-indoor-plants-1600x1200.jpg) | Tri-X 400 | Compact | 1600 x 1200 | 46 sec |
