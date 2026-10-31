@@ -6,6 +6,14 @@ IXFilm OS watches the JPEGs the camera writes, develops a version with the selec
 
 ![IXFilm OS main menu on a Canon IXUS 120 IS](docs/images/ixfilm-main-menu.jpg)
 
+Choosing **Color** or **Black & white** opens a second menu with the individual film recipes:
+
+| Colour recipes | Black-and-white recipes |
+|---|---|
+| ![The IXFilm colour recipe menu, with Astia, Bleach Bypass, Classic Chrome, Classic Neg, Eterna, Gold, Nostalgic Neg, Portra, Provia, Reala Ace, Soup 800 and Velvia](docs/images/ixfilm-colour-films.jpg) | ![The IXFilm black-and-white recipe menu, with Acros, Tri-X 400, HP5 Plus, FP4 Plus, T-Max 100 and Delta 3200](docs/images/ixfilm-black-and-white-films.jpg) |
+
+*The colour and black-and-white entries in the main menu are categories, not the only two looks. Each opens its own list of recipes.*
+
 This is not replacement firmware and it does not flash the camera. It is a heavily stripped and modified CHDK build that runs from a locked SD card. Remove or unlock that card and the camera is back to stock.
 
 ## Why this exists
@@ -76,10 +84,6 @@ After a successful conversion, the film-simulated JPEG replaces the original Can
 ### Colour and black and white
 
 The menu keeps the two lists separate. This saves scrolling and, more importantly, prevents eighteen names from becoming a very small typographic endurance test.
-
-| Colour simulations | Black-and-white simulations |
-|---|---|
-| ![Colour film simulations including Astia, Classic Chrome, Portra and Velvia](docs/images/ixfilm-colour-films.jpg) | ![Black-and-white film simulations including Acros, Tri-X 400, HP5 Plus and Delta 3200](docs/images/ixfilm-black-and-white-films.jpg) |
 
 ### Conversion quality
 
