@@ -78,7 +78,8 @@ void ixfilm_status_update(const char *stock, int percent,
     ixfilm_stock[sizeof(ixfilm_stock)-1] = 0;
     /* Autorun reports the saved film while the boot hint is visible. Keep
      * the name, but do not replace the instruction before its timeout. */
-    if (state == 5 && ixfilm_state == 4) return;
+    if (state == 5 && ixfilm_state == 4 && ixfilm_until &&
+        (int)(get_tick_count() - ixfilm_until) < 0) return;
     ixfilm_percent = percent;
     ixfilm_current = current;
     ixfilm_total = total;
@@ -86,6 +87,10 @@ void ixfilm_status_update(const char *stock, int percent,
     ixfilm_draw_after = get_tick_count() + ((state == 5) ? 800 : 0);
     ixfilm_until = (state == 1 || state == 5) ? 0 : get_tick_count() + ((state == 3) ? 8000 : 4000);
     ixfilm_dirty = 1;
+    /* Selected-film updates are infrequent and must survive Canon bitmap
+     * rebuilds after startup and PLAY/REC transitions. Request one normal
+     * GUI restore so drawing does not depend on the next shutter event. */
+    if (state == 5) gui_set_need_restore();
 }
 
 int ixfilm_conversion_is_active(void)
@@ -101,7 +106,7 @@ void ixfilm_boot_hint(void)
      * our first paint until that has settled, as happens naturally for the
      * conversion status which is created later in the capture sequence. */
     ixfilm_draw_after = now + 2500;
-    ixfilm_until = now + 8000;
+    ixfilm_until = now + 6500;
     ixfilm_dirty = 1;
 }
 

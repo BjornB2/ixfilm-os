@@ -26,6 +26,7 @@ The expected release outputs are:
 chdk-trunk/bin/DISKBOOT.BIN
 chdk-trunk/CHDK/MODULES/ixfilm.flt
 chdk-trunk/CHDK/MODULES/mpopup.flt
+chdk-trunk/CHDK/MODULES/fselect.flt
 ```
 
 Run the packager from the repository root:
@@ -34,7 +35,7 @@ Run the packager from the repository root:
 scripts/package-release.sh 0.1.0-rc1
 ```
 
-It creates `dist/ixfilm-os-0.1.0-rc1/` and records SHA-256 hashes for the three executable files. It refuses to overwrite an existing package.
+It creates `dist/ixfilm-os-0.1.0-rc1/` and records SHA-256 hashes for the four executable files. It refuses to overwrite an existing package.
 
 ## Windows bootstrap
 

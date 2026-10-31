@@ -37,6 +37,7 @@ need_file() {
 need_file "$root/chdk-trunk/bin/DISKBOOT.BIN"
 need_file "$root/chdk-trunk/CHDK/MODULES/ixfilm.flt"
 need_file "$root/chdk-trunk/CHDK/MODULES/mpopup.flt"
+need_file "$root/chdk-trunk/CHDK/MODULES/fselect.flt"
 need_file "$root/chdk-trunk/COPYING"
 
 for stock in $stocks; do
@@ -52,6 +53,7 @@ mkdir -p "$stage/CHDK/FILM" "$stage/CHDK/MODULES" "$stage/CHDK/DATA" "$stage/CHD
 cp "$root/chdk-trunk/bin/DISKBOOT.BIN" "$stage/"
 cp "$root/chdk-trunk/CHDK/MODULES/ixfilm.flt" "$stage/CHDK/MODULES/"
 cp "$root/chdk-trunk/CHDK/MODULES/mpopup.flt" "$stage/CHDK/MODULES/"
+cp "$root/chdk-trunk/CHDK/MODULES/fselect.flt" "$stage/CHDK/MODULES/"
 cp "$root/chdk-trunk/COPYING" "$stage/COPYING"
 
 for stock in $stocks; do
@@ -66,7 +68,7 @@ rm "$stage/README.md.bak"
 
 (
     cd "$stage"
-    shasum -a 256 DISKBOOT.BIN CHDK/MODULES/ixfilm.flt CHDK/MODULES/mpopup.flt > SHA256SUMS
+    shasum -a 256 DISKBOOT.BIN CHDK/MODULES/ixfilm.flt CHDK/MODULES/mpopup.flt CHDK/MODULES/fselect.flt > SHA256SUMS
 )
 
 echo "Created $stage"

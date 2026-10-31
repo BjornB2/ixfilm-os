@@ -205,6 +205,7 @@ CHDK/
     acros.fs
     ...
   MODULES/
+    fselect.flt
     ixfilm.flt
     mpopup.flt
 ```
